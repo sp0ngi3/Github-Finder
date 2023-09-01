@@ -11,7 +11,7 @@ function User() {
   useEffect(() => {
     fetchUser(login);
     GetUserRepos(login);
-  }, []);
+  }, [GetUserRepos, login, fetchUser]);
 
   const {
     name,
@@ -53,8 +53,8 @@ function User() {
                 <img src={avatar_url} alt=""></img>
               </figure>
               <div className="card-body justify-end">
-                <h2 className="card-title mb-0">{}</h2>
-                <p>{}</p>
+                <h2 className="card-title mb-0">{ }</h2>
+                <p>{ }</p>
               </div>
             </div>
           </div>
