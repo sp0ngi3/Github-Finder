@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  dev.finder:
+    hostname: dev-finder
+    image: dev-finder
+    container_name: finder-dev
+    build:
+      context: ./github-finder-client
+      dockerfile: Dockerfile
+    ports:
+       - "3000:3000"
+    env_file:
+      - Variables/.env
+    

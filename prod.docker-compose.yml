@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  prod.finder:
+    hostname: prod-finder
+    image: prod-finder
+    container_name: finder-prod
+    build:
+      context: ./github-finder-client
+      dockerfile: prod.Dockerfile
+    ports:
+       - "3000:80"
+    env_file:
+      - Variables/.env
