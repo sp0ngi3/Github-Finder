@@ -7,3 +7,4 @@ npm install --save-dev jest-json-reporter
 npm install --save-dev cross-env
 npm install --save-dev jest-junit
 
+npm install --save-dev @babel/preset-env @babel/preset-react

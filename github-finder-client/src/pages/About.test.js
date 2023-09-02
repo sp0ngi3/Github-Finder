@@ -8,9 +8,9 @@ describe('About Component', () => {
     it('should render the header with the text "Github Finder"', () => {
         render(<About />);
 
-        // const headerElement = screen.getByText('Github Finder');
-
         const headerElement = screen.getByText('Github Finder');
+
+        // const headerElement = screen.getByText('dasdas');
 
         expect(headerElement).toBeInTheDocument();
         expect(headerElement).toHaveClass('text-6xl mb-4');
