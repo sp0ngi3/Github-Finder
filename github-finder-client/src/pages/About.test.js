@@ -10,7 +10,7 @@ describe('About Component', () => {
 
         // const headerElement = screen.getByText('Github Finder');
 
-        const headerElement = screen.getByText('Gdasdasdasjdasodas');
+        const headerElement = screen.getByText('Github Finder');
 
         expect(headerElement).toBeInTheDocument();
         expect(headerElement).toHaveClass('text-6xl mb-4');
