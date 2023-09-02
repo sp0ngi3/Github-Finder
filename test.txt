@@ -1,2 +1,4 @@
 npm i --save-dev @testing-library/react react-test-renderer
 npm install --save @testing-library/jest-dom
+npm install --save-dev jest
+
