@@ -11,7 +11,7 @@ function User() {
   useEffect(() => {
     fetchUser(login);
     GetUserRepos(login);
-  }, [GetUserRepos, login, fetchUser]);
+  }, [login]);
 
   const {
     name,
