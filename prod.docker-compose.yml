@@ -1,10 +1,10 @@
 version: '3.4'
 
 services:
-  prod.finder:
-    hostname: prod-finder
-    image: prod-finder
-    container_name: finder-prod
+ finder:
+    hostname: finder
+    image: finder
+    container_name: finder    
     build:
       dockerfile: github-finder-client/prod.Dockerfile
     ports:
