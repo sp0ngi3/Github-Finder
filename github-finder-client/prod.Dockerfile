@@ -5,7 +5,6 @@ COPY github-finder-client/package.json /app/package.json
 RUN apk add --no-cache git
 RUN npm i
 
-RUN ls ../
 
 
  COPY /Variables/.env /app/.env
