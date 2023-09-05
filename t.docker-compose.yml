@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+ finder:
+    hostname: finder
+    image: finder
+    container_name: finder    
+    build:
+      dockerfile: github-finder-client/prod.Dockerfile
+    labels:
+        - "traefik.http.routers.finder.rule=Host(`finder.localhost`)"
+    ports:
+       - "3000:80"
+    env_file:
+      - Variables/.env
+    networks:
+      - default 
+ traefik:
+    container_name: traefik
+    image: traefik
+    command: --api.insecure=true --providers.docker
+    ports:
+      - 80:80
+      - 8080:8080 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - default
+
