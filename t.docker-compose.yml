@@ -8,8 +8,13 @@ services:
     build:
       dockerfile: github-finder-client/prod.Dockerfile
     labels:
-      - "traefik.http.routers.finder.rule=Host(`finder.localhost`)"
-      - "traefik.http.services.finder.loadbalancer.server.port=80"
+       - traefik.enable=true
+       - traefik.http.routers.finder-http.entrypoints=http
+       - traefik.http.routers.finder-http.rule=Host(`finder.localhost`)     
+       - traefik.http.routers.finder-https.entrypoints=https
+       - traefik.http.routers.finder-https.rule=Host(`finder.localhost`)    
+       - traefik.http.routers.finder-https.tls=true
+       - traefik.http.services.finder.loadbalancer.server.port=80
     env_file:
       - Variables/.env
     networks:
